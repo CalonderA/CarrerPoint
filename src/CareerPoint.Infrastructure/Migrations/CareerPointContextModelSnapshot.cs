@@ -41,7 +41,7 @@ namespace CareerPoint.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Events");
+                    b.ToTable("Events", (string)null);
                 });
 
             modelBuilder.Entity("CareerPoint.Infrastructure.Model.User", b =>
@@ -50,21 +50,9 @@ namespace CareerPoint.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AvatarUrl")
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("Course")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<int>("Direction")
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -88,10 +76,6 @@ namespace CareerPoint.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Skills")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -109,7 +93,7 @@ namespace CareerPoint.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("EventUser", b =>
@@ -124,7 +108,7 @@ namespace CareerPoint.Infrastructure.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("EventUser");
+                    b.ToTable("EventUser", (string)null);
                 });
 
             modelBuilder.Entity("EventUser", b =>
