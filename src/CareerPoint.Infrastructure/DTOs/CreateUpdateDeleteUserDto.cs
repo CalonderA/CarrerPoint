@@ -1,12 +1,16 @@
-using CareerPoint.Infrastructure.Enums;
+﻿using CareerPoint.Infrastructure.Enums;
 
 namespace CareerPoint.Infrastructure.DTOs;
 
-public class UpdateUserDto
+public class CreateUpdateDeleteUserDto
 {
+    public Guid Id { get; set; }
+
     public required string Username { get; set; }
 
     public required string Email { get; set; }
+
+    public required string Password { get; set; }
 
     public required string Name { get; set; }
 
@@ -22,15 +26,7 @@ public class UpdateUserDto
 
     public bool IsSubscribedToNotifications { get; set; }
 
-    // Возраст
-    public int Age { get; set; }
+    public UserRole UserRole { get; set; }
 
-    // Направление
-    public Direction Direction { get; set; }
-
-    // Курс
-    public Course Course { get; set; }
-
-    // Навыки
-    public string[] Skills { get; set; } = Array.Empty<string>();
+    public byte[]? Avatar { get; set; }
 }
